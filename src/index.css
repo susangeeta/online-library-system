@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css?family=DM+Sans:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic");
+@import "tailwindcss";
+* {
+  font-family: "DM Sans", sans-serif;
+}
+
+@layer components {
+  .main-container {
+    @apply container mx-auto px-24 py-5;
+  }
+}
+
+.clip-diagonal {
+  clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+}
