@@ -51,4 +51,26 @@ export const popularBooks = [
       "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout..",
     rating: 4.7,
   },
+  {
+    id: 4,
+    title: "The Great Gatsby",
+    author: "Yuval Noah Harari",
+    category: "Sci-Fi",
+    image:
+      "https://skille.presstigers.dev/images/category-filter/home-v1/category-filter-img-02.jpg",
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout..",
+    rating: 4.7,
+  },
+  {
+    id: 4,
+    title: "The Great Gatsby",
+    author: "Yuval Noah Harari",
+    category: "Fantasy",
+    image:
+      "https://skille.presstigers.dev/images/category-filter/home-v1/category-filter-img-02.jpg",
+    description:
+      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout..",
+    rating: 4.7,
+  },
 ];

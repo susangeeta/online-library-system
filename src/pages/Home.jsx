@@ -1,10 +1,11 @@
 import BookCard from "../components/BookCard";
 import Header from "../components/Header";
+import PopularBooks from "../components/PopularBooks";
 
 const Home = () => {
   return (
     <div>
-      <section className="main-container  bg-[url('https://eyecix.com/html/ereaders/extra-images/banner-1.jpg')] bg-cover bg-center bg-no-repeat h-[650px] bg-black/75 bg-blend-overlay">
+      <section className="main-container  bg-[url('https://eyecix.com/html/ereaders/extra-images/banner-1.jpg')] bg-cover bg-center bg-no-repeat  bg-black/75 bg-blend-overlay">
         <Header />
 
         <section className="flex w-full items-center justify-center ">
@@ -29,6 +30,9 @@ const Home = () => {
         </section>
       </section>
       <BookCard />
+      <div className="border">
+        <PopularBooks />
+      </div>
     </div>
   );
 };

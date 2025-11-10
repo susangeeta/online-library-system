@@ -13,7 +13,7 @@ const BookCard = () => {
       : popularBooks.filter((item) => item.category === categorySelect);
 
   return (
-    <div className="main-container  bg-[url('https://skille.presstigers.dev/images/filter-bg.png')] h-[800px] bg-cover bg-center flex flex-col pt-16 gap-12 bg-[#f5f7f] bg-fixed">
+    <div className="main-container  bg-[url('https://skille.presstigers.dev/images/filter-bg.png')]  bg-cover bg-center flex flex-col pt-16 gap-12 bg-[#f5f7f] bg-fixed">
       <div className="flex items-center justify-center flex-col gap-5">
         <h4 className="text-gray-500 font-bold">Categories Collections</h4>
         <h1 className="text-[#282828] font-bold text-5xl text-center">
