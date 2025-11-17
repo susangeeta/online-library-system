@@ -6,7 +6,7 @@ export const categories = [
   "Fantasy",
 ];
 
-export const popularBooks = [
+export const categoriesBooks = [
   {
     id: 1,
     title: "The Great Gatsby",
@@ -72,5 +72,46 @@ export const popularBooks = [
     description:
       "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout..",
     rating: 4.7,
+  },
+];
+
+export const popularBooks = [
+  {
+    id: 1,
+    title: "Collection Of Books",
+    des: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+    image:
+      "https://skille.presstigers.dev/images/features/home-v1/books-collection.jpg",
+  },
+  {
+    id: 2,
+    title: "Download or Read eBooks",
+    des: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+    image: "https://skille.presstigers.dev/images/features/home-v1/dvd.jpg",
+  },
+  {
+    id: 3,
+    title: "Watch and Download DVDs",
+    des: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+    image: "https://skille.presstigers.dev/images/features/home-v1/dvd.jpg",
+  },
+  {
+    id: 4,
+    title: "Variety of Magazines",
+    des: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+    image:
+      "https://skille.presstigers.dev/images/features/home-v1/magazines.jpg",
+  },
+  {
+    id: 5,
+    title: "Audio for Books & Magazine",
+    des: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout..",
+    image: "https://skille.presstigers.dev/images/features/home-v1/audio.jpg",
+  },
+  {
+    id: 6,
+    title: "eAudios",
+    des: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+    image: "https://skille.presstigers.dev/images/features/home-v1/eaudio.jpg",
   },
 ];

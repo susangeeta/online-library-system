@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { IoMdStarOutline } from "react-icons/io";
-import { categories, popularBooks } from "../data/Book.js";
+import { categories, categoriesBooks } from "../data/Book.js";
 
 const BookCard = () => {
   const [categorySelect, setCategorySelect] = useState("All");
@@ -9,11 +9,11 @@ const BookCard = () => {
 
   const filterCategories =
     categorySelect === "All"
-      ? popularBooks
-      : popularBooks.filter((item) => item.category === categorySelect);
+      ? categoriesBooks
+      : categoriesBooks.filter((item) => item.category === categorySelect);
 
   return (
-    <div className="main-container  bg-[url('https://skille.presstigers.dev/images/filter-bg.png')]  bg-cover bg-center flex flex-col pt-16 gap-12 bg-[#f5f7f] bg-fixed">
+    <div className="main-container bg-[url('https://skille.presstigers.dev/images/filter-bg.png')]  bg-cover bg-center flex flex-col pt-16 gap-12 bg-[#f5f7f] bg-fixed">
       <div className="flex items-center justify-center flex-col gap-5">
         <h4 className="text-gray-500 font-bold">Categories Collections</h4>
         <h1 className="text-[#282828] font-bold text-5xl text-center">

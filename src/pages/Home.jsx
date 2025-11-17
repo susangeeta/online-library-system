@@ -30,9 +30,7 @@ const Home = () => {
         </section>
       </section>
       <BookCard />
-      <div className="border">
-        <PopularBooks />
-      </div>
+      <PopularBooks />
     </div>
   );
 };
