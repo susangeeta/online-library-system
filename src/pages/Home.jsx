@@ -1,13 +1,10 @@
 import BookCard from "../components/BookCard";
-import Header from "../components/Header";
 import PopularBooks from "../components/PopularBooks";
 
 const Home = () => {
   return (
     <div>
       <section className="main-container  bg-[url('https://eyecix.com/html/ereaders/extra-images/banner-1.jpg')] bg-cover bg-center bg-no-repeat  bg-black/75 bg-blend-overlay">
-        <Header />
-
         <section className="flex w-full items-center justify-center ">
           <div className="w-[60%] flex  flex-col gap-2 text-white justify-center">
             <h2 className="text-6xl font-bold">
