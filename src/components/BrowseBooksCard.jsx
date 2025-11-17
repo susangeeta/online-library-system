@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 import { browseBooks } from "../data/Book";
 
 const BrowseBooksCard = () => {
   return (
-    <div className="grid grid-cols-4 gap-7 main-container ">
+    <div className="grid grid-cols-4 gap-7 main-container pb-16 ">
       {browseBooks.map((book, id) => (
         <div
           key={id}
@@ -22,9 +23,11 @@ const BrowseBooksCard = () => {
               </h2>
             </div>
             <div>
-              <button className="border boreder-[#f0582f] px-3 py-1 text-[#f0582f] rounded-md cursor-pointer">
-                View Details
-              </button>
+              <Link to={`/bookDetails/${book.id}`}>
+                <button className="border boreder-[#f0582f] px-3 py-1 text-[#f0582f] rounded-md cursor-pointer">
+                  View Details
+                </button>
+              </Link>
             </div>
           </section>
         </div>

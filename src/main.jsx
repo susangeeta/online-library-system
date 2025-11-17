@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.jsx";
 import "./index.css";
 import AddBooks from "./pages/AddBooks.jsx";
+import BookDetails from "./pages/BookDetails.jsx";
 import BrowseBooks from "./pages/BrowseBooks.jsx";
 import Home from "./pages/Home.jsx";
 
@@ -24,6 +25,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/addBooks",
         element: <AddBooks />,
+      },
+      {
+        path: "/bookDetails/:id",
+        element: <BookDetails />,
       },
     ],
   },
