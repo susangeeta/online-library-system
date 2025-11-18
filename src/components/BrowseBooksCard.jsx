@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
-import { browseBooks } from "../data/Book";
 
-const BrowseBooksCard = () => {
+const BrowseBooksCard = ({ allBooks }) => {
   return (
     <div className="grid grid-cols-4 gap-7 main-container pb-16 ">
-      {browseBooks.map((book, id) => (
+      {allBooks.map((book, id) => (
         <div
           key={id}
-          className="flex flex-col border border-gray-300 rounded-md bg-white p-"
+          className="flex flex-col border border-gray-300 rounded-md bg-white overflow-hidden"
         >
           <img src={book.image} alt="" className="h-full object-cover w-full" />
           <section className="p-3.5 flex justify-between w-full items-center">

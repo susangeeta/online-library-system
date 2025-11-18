@@ -1,14 +1,20 @@
+import { Toaster } from "react-hot-toast";
+import { Provider } from "react-redux";
 import { Outlet } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import store from "./utils/Store";
 
 function App() {
   return (
     <div>
-      <Header />
-      <Outlet />
-      <Footer />
+      <Provider store={store}>
+        <Toaster position="top-center" />
+        <Header />
+        <Outlet />
+        <Footer />
+      </Provider>
     </div>
   );
 }

@@ -1,12 +1,20 @@
 import { FaStar } from "react-icons/fa6";
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 
 const BooksMoreDetails = () => {
+  const { id } = useParams();
+  const books = useSelector((state) => state.books.list);
+  const book = books.find((item) => item.id === Number(id));
+  console.log(book);
+  console.log(books);
+
   return (
     <div className="main-container flex items-center justify-center py-12  ">
       <div className="flex  rounded-md w-[60%] bg-white border border-gray-300 overflow-hidden  ">
         <div className="">
           <img
-            src="https://skille.presstigers.dev/images/books-media/gird-view/book-media-1.jpg"
+            src={book.image}
             alt=""
             className="h-full object-cover w-[350px]"
           />
@@ -19,18 +27,18 @@ const BooksMoreDetails = () => {
               ))}
             </div>
             <button className="bg-yellow-400 rounded-full px-4 py-1 text-xs text-white">
-              Fiction
+              {book.category}
             </button>
           </div>
           <div className="pt-4 ">
             <h1 className="text-[#282828] text-xl font-bold whitespace-nowrap">
-              Flames of War By John
+              {book.title}
             </h1>
             <section className="flex justify-between  pt-1   ">
               <div className="flex flex-col gap-1 ">
                 <div className="text-[#717171] text-sm">Author:</div>
                 <div className="text-[#282828] text-sm font-semibold">
-                  F. Scott Fitzgerald
+                  {book.author}
                 </div>
               </div>
               <div className="flex flex-col gap-1">
@@ -50,11 +58,7 @@ const BooksMoreDetails = () => {
               <div className="w-full bg-gray-100  h-[1.5px]"></div>
             </div>
             <p className="text-sm text-justify leading-6 w-fit pt-4">
-              The point of using Lorem Ipsum is that it has a more-or-less
-              normal distribution of letters, as opposed to using 'Content here,
-              content here', making it look like readable English. Many desktop
-              publishing packages and web page editors now use Lorem Ipsum as
-              their default model.
+              {book.des}
             </p>
           </div>
         </div>

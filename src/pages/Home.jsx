@@ -1,6 +1,3 @@
-import BookCard from "../components/BookCard";
-import PopularBooks from "../components/PopularBooks";
-
 const Home = () => {
   return (
     <div>
@@ -26,8 +23,8 @@ const Home = () => {
           </div>
         </section>
       </section>
-      <BookCard />
-      <PopularBooks />
+      {/* <BookCard />
+      <PopularBooks /> */}
     </div>
   );
 };
