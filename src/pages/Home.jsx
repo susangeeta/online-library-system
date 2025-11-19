@@ -1,4 +1,16 @@
+import { useState } from "react";
+import { useSelector } from "react-redux";
+import BrowseBooksCard from "../components/BrowseBooksCard";
+import { categories } from "../data/Book";
+
 const Home = () => {
+  const allBooks = useSelector((state) => state.books.list);
+  console.log(allBooks);
+  const [category, setCategory] = useState("All");
+  const filterBooks =
+    category === "All"
+      ? allBooks
+      : allBooks.filter((book) => book.category === category);
   return (
     <div>
       <section className="main-container  bg-[url('https://eyecix.com/html/ereaders/extra-images/banner-1.jpg')] bg-cover bg-center bg-no-repeat  bg-black/75 bg-blend-overlay">
@@ -23,8 +35,30 @@ const Home = () => {
           </div>
         </section>
       </section>
-      {/* <BookCard />
-      <PopularBooks /> */}
+      {/*categories section */}
+      <div className="flex flex-col items-center justify-center pt-12 gap-6">
+        <h2 className="text-[#777777] text-2xl font-semibold">
+          Latest Categories
+        </h2>
+        <div className="flex gap-3 border border-[#dedede] w-fit rounded-full py-1 overflow-hidden items-center justify-center ">
+          {categories.map((item) => (
+            <div className="flex gap-3  overflow-hidden ">
+              <button
+                onClick={() => setCategory(item)}
+                className={`text-[#282828] text-sm cursor-pointer  rounded-full w-32 py-2  px-2 ${
+                  category === item
+                    ? "bg-[#f0582f] text-white"
+                    : "text-[#282828] bg-white"
+                }`}
+              >
+                {item}
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <BrowseBooksCard allBooks={filterBooks} />
     </div>
   );
 };

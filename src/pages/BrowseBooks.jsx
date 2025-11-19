@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import BrowseBooksCard from "../components/BrowseBooksCard";
 import { browseBooks } from "../data/Book";
 
 const BrowseBooks = () => {
-  const [allBooks, setAllBooks] = useState(browseBooks);
+  const books = useSelector((state) => state.books.list);
+  const [allBooks, setAllBooks] = useState(books);
   const [loading, setLoading] = useState("");
 
   useEffect(() => {
-    if (allBooks && allBooks.length) {
-      setLoading(false);
-    }
-  }, [allBooks]);
+    setAllBooks(books);
+    setLoading(false);
+  }, [books]);
 
   //search books
   const handelSearch = (e) => {

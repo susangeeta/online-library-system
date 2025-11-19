@@ -8,7 +8,16 @@ const BrowseBooksCard = ({ allBooks }) => {
           key={id}
           className="flex flex-col border border-gray-300 rounded-md bg-white overflow-hidden"
         >
-          <img src={book.image} alt="" className="h-full object-cover w-full" />
+          <div className="relative">
+            <img
+              src={book.image}
+              alt=""
+              className="h-full object-cover w-full"
+            />
+            <button className="absolute top-3 rounded-md left-3 px-4 py-1 bg-white capitalize text-xs text-[#f0582f] border border-[#f0582f]">
+              {book.category}
+            </button>
+          </div>
           <section className="p-3.5 flex justify-between w-full items-center">
             <div>
               <h1 className="text-[#282828] text-base font-bold whitespace-nowrap">
