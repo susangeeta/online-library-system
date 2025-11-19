@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import BrowseBooksCard from "../components/BrowseBooksCard";
+import PopularCard from "../components/PopularCard";
 import { categories } from "../data/Book";
 
 const Home = () => {
   const allBooks = useSelector((state) => state.books.list);
-  console.log(allBooks);
   const [category, setCategory] = useState("All");
   const filterBooks =
     category === "All"
@@ -59,6 +59,7 @@ const Home = () => {
       </div>
 
       <BrowseBooksCard allBooks={filterBooks} />
+      <PopularCard allBooks={filterBooks} />
     </div>
   );
 };

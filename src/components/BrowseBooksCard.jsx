@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { vector } from "../assets";
 
 const BrowseBooksCard = ({ allBooks }) => {
   return (
@@ -23,12 +24,12 @@ const BrowseBooksCard = ({ allBooks }) => {
               <h1 className="text-[#282828] text-base font-bold whitespace-nowrap">
                 {book.title}
               </h1>
-              <h2 className="text-[#717171] text-sm">
-                Author:
-                <span className="text-[#282828] text-sm font-normal ml-1 ">
+              <div className="flex gap-1">
+                <img src={vector} className="h-5 w-5 rounded-full" />
+                <h2 className="text-[#282828] text-sm font-normal ml-1 ">
                   {book.author}
-                </span>
-              </h2>
+                </h2>
+              </div>
             </div>
             <div>
               <Link to={`/bookDetails/${book.id}`}>
