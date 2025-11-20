@@ -1,6 +1,7 @@
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.jsx";
+import NotFound from "./components/NotFound.jsx";
 import "./index.css";
 import AddBooks from "./pages/AddBooks.jsx";
 import BookDetails from "./pages/BookDetails.jsx";
@@ -29,6 +30,14 @@ const appRouter = createBrowserRouter([
       {
         path: "/bookDetails/:id",
         element: <BookDetails />,
+      },
+      {
+        path: "/404",
+        element: <NotFound />,
+      },
+      {
+        path: "*",
+        element: <NotFound />,
       },
     ],
   },
