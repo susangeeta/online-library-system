@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import BrowseBooksCard from "../components/BrowseBooksCard";
+import PopularCard from "../components/PopularCard";
 import { browseBooks } from "../data/Book";
 
 const BrowseBooks = () => {
@@ -43,7 +43,7 @@ const BrowseBooks = () => {
       ) : allBooks.length === 0 ? (
         <p className="text-center text-red-500 mt-6">No restaurant found</p>
       ) : (
-        <BrowseBooksCard allBooks={allBooks} />
+        <PopularCard allBooks={allBooks} />
       )}
     </div>
   );

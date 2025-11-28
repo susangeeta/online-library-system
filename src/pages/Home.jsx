@@ -1,19 +1,19 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import BrowseBooksCard from "../components/BrowseBooksCard";
 import PopularCard from "../components/PopularCard";
 import { categories } from "../data/Book";
 
 const Home = () => {
-  const allBooks = useSelector((state) => state.books.list);
+  const allBooks = useSelector((state) => state.books.items);
   const [category, setCategory] = useState("All");
   const filterBooks =
     category === "All"
       ? allBooks
       : allBooks.filter((book) => book.category === category);
+  const popular = [...allBooks].sort((a, b) => b.rating - a.rating).slice(0, 4);
   return (
     <div>
-      <section className="main-container  bg-[url('https://eyecix.com/html/ereaders/extra-images/banner-1.jpg')] bg-cover bg-center bg-no-repeat  bg-black/75 bg-blend-overlay">
+      <section className="main-container h-[600px]  bg-[url('https://eyecix.com/html/ereaders/extra-images/banner-1.jpg')] bg-cover bg-center bg-no-repeat  bg-black/75 bg-blend-overlay">
         <section className="flex w-full items-center justify-center ">
           <div className="w-[60%] flex  flex-col gap-2 text-white justify-center">
             <h2 className="text-6xl font-bold">
@@ -57,9 +57,16 @@ const Home = () => {
           ))}
         </div>
       </div>
-
-      <BrowseBooksCard allBooks={filterBooks} />
       <PopularCard allBooks={filterBooks} />
+
+      {/*popular books */}
+      <div className="flex flex-col gap-5">
+        {" "}
+        <h2 className="text-[#777777] text-2xl font-semibold text-center">
+          Popular Books
+        </h2>
+        <PopularCard allBooks={popular} />
+      </div>
     </div>
   );
 };

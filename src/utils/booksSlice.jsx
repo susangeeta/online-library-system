@@ -1,15 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { browseBooks } from "../data/Book";
+import { popularBooks } from "../data/Book";
 
 const booksSlice = createSlice({
   name: "books",
-  initialState: {
-    list: browseBooks,
-  },
+  initialState: { items: popularBooks.slice(), loading: false },
   reducers: {
     addBook: (state, action) => {
-      const newBook = action.payload;
-      state.list.unshift(newBook);
+      state.items.unshift(action.payload);
     },
   },
 });
