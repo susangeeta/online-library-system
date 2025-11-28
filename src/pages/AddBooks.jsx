@@ -14,9 +14,11 @@ const AddBooks = () => {
   const [rating, setRating] = useState("");
   const [image, setImage] = useState("");
   const [category, setCategory] = useState("");
+  const DEFAULT_IMAGE =
+    "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib";
 
   const validate = () => {
-    if (!title || !author || !des || !action || !rating || !image || !des) {
+    if (!title || !author || !des || !action || !rating || !des) {
       toast.error("Please fill all the field");
       return false;
     }
@@ -33,8 +35,9 @@ const AddBooks = () => {
       action,
       rating,
       category,
-      image,
-      des,
+      description: des,
+
+      image: image.trim() === "" ? DEFAULT_IMAGE : image,
     };
     console.log(newBook);
     dispatch(addBook(newBook));
@@ -42,13 +45,13 @@ const AddBooks = () => {
     setTimeout(() => navigate("/browse"), 800);
   };
   return (
-    <div className="py-12 main-container w-[50%]">
+    <div className="py-12 main-container w-full  md:w-[50%]">
       <form
         onSubmit={handelSubmit}
         className="bg-white  shadow-[0_8px_30px_rgb(0,0,0,0.12)] p-5 flex flex-col gap-4 "
       >
         <h1 className="text-center text-[#f0582f] text-2xl">Add New Book</h1>
-        <div className="flex  gap-3">
+        <div className="flex md:flex-row flex-col  gap-3">
           <div className="flex  flex-col gap-1 w-full ">
             <h1>Book Title</h1>
             <input
@@ -73,7 +76,7 @@ const AddBooks = () => {
           </div>
         </div>
 
-        <div className="flex  gap-3">
+        <div className="flex md:flex-row flex-col  gap-3">
           <div className="flex  flex-col gap-1 w-full">
             <h1>Action</h1>
             <input
@@ -97,17 +100,19 @@ const AddBooks = () => {
             />
           </div>
         </div>
-        <div className="flex  gap-3">
+        <div className="flex md:flex-row flex-col  gap-3">
           <div className="flex  flex-col gap-1 w-full">
             <h1>Catgory</h1>
-            <input
-              type="text"
+            <select
               value={category}
               onChange={(e) => setCategory(e.target.value)}
-              className="border border-gray-300 p-2 w-full rounded-md focus:outline-none focus:ring-0"
-              placeholder="Rating"
-              required
-            />
+              className="border border-gray-300 p-2 rounded-md"
+            >
+              <option value="Fiction">Fiction</option>
+              <option value="Sci-fi">Sci-fi</option>
+              <option value="Self-Help">Self-Help</option>
+              <option value="Cooking">Cooking</option>
+            </select>
           </div>
           <div className="flex flex-col gap-1 w-full">
             <label className="font-semibold">Image URL</label>
@@ -117,7 +122,6 @@ const AddBooks = () => {
               onChange={(e) => setImage(e.target.value)}
               className="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-0"
               placeholder="Paste image URL"
-              required
             />
           </div>
         </div>

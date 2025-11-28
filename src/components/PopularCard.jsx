@@ -3,7 +3,7 @@ import { vector } from "../assets";
 
 const PopularCard = ({ allBooks }) => {
   return (
-    <div className="grid grid-cols-4 gap-7 main-container pb-16 ">
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-7 main-container pb-16 ">
       {allBooks.map((book, id) => (
         <div
           key={id}
@@ -11,10 +11,15 @@ const PopularCard = ({ allBooks }) => {
         >
           <div className="relative">
             <img
-              src={book.image}
+              src={
+                book.image?.trim() !== ""
+                  ? book.image
+                  : "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1200&auto=format&fit=crop"
+              }
               alt=""
               className="h-full object-cover w-full"
             />
+
             <button className="absolute top-3 rounded-md left-3 px-4 py-1 bg-white capitalize text-xs text-[#f0582f] border border-[#f0582f]">
               {book.category}
             </button>

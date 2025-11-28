@@ -13,10 +13,10 @@ const Home = () => {
   const popular = [...allBooks].sort((a, b) => b.rating - a.rating).slice(0, 4);
   return (
     <div>
-      <section className="main-container h-[600px]  bg-[url('https://eyecix.com/html/ereaders/extra-images/banner-1.jpg')] bg-cover bg-center bg-no-repeat  bg-black/75 bg-blend-overlay">
-        <section className="flex w-full items-center justify-center ">
-          <div className="w-[60%] flex  flex-col gap-2 text-white justify-center">
-            <h2 className="text-6xl font-bold">
+      <section className="main-container h-[300px] md:h-[600px]  bg-[url('https://eyecix.com/html/ereaders/extra-images/banner-1.jpg')] bg-cover bg-center bg-no-repeat  bg-black/75 bg-blend-overlay">
+        <section className="flex md:flex-row flex-col w-full items-center justify-center ">
+          <div className=" w-full md:w-[60%] flex pt-10  flex-col gap-2 text-white justify-center">
+            <h2 className=" text-2xl md:text-6xl font-bold">
               Welcome to the{" "}
               <span className="text-[#db5974] font-bold"> Library</span>
             </h2>
@@ -27,7 +27,7 @@ const Home = () => {
               <br /> non rhoncus libero tristique.
             </p>
           </div>
-          <div className="w-[40%]">
+          <div className=" md:block hidden w-full md:w-[40%]">
             <img
               src="https://eyecix.com/html/ereaders/extra-images/banner-thumb.png"
               className="w-full object-contain h-[500px] "
@@ -36,11 +36,11 @@ const Home = () => {
         </section>
       </section>
       {/*categories section */}
-      <div className="flex flex-col items-center justify-center pt-12 gap-6">
+      <div className="flex flex-col items-center justify-center pt-10 md:pt-12 gap-6">
         <h2 className="text-[#777777] text-2xl font-semibold">
           Latest Categories
         </h2>
-        <div className="flex gap-3 border border-[#dedede] w-fit rounded-full py-1 overflow-hidden items-center justify-center ">
+        <div className=" hidden md:flex gap-3 border border-[#dedede] w-fit rounded-full py-1 overflow-hidden items-center justify-center ">
           {categories.map((item) => (
             <div className="flex gap-3  overflow-hidden ">
               <button
@@ -56,8 +56,27 @@ const Home = () => {
             </div>
           ))}
         </div>
+        <div className="md:hidden grid grid-cols-2 gap-3">
+          {categories.map((item) => (
+            <div className="flex gap-3 ">
+              <button
+                onClick={() => setCategory(item)}
+                className={`text-[#282828] text-sm cursor-pointer  rounded-md w-32 py-2  px-2 ${
+                  category === item
+                    ? "bg-[#f0582f] text-white"
+                    : "text-[#282828] bg-white border"
+                }`}
+              >
+                {item}
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
-      <PopularCard allBooks={filterBooks} />
+      <div className=" py-4 md:py-5">
+        {" "}
+        <PopularCard allBooks={filterBooks.slice(0, 8)} />
+      </div>
 
       {/*popular books */}
       <div className="flex flex-col gap-5">

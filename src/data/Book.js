@@ -1,12 +1,6 @@
 import { book, populaBooks } from "../assets";
 
-export const categories = [
-  "All",
-  "Fiction",
-  "Non-Fiction",
-  "Sci-Fi",
-  "Fantasy",
-];
+export const categories = ["All", "Fiction", "Non-Fiction", "Sci-Fi"];
 
 export const browseBooks = [
   {
@@ -85,6 +79,7 @@ export const popularBooks = [
     image: populaBooks,
     subheading: "A Journey Through Chaos",
     category: "Fiction",
+    rating: "5",
   },
   {
     id: 2,
@@ -95,6 +90,7 @@ export const popularBooks = [
       "A gripping mystery novel about a young girl who uncovers secrets hidden deep within an ancient forest. that teaches techniques to improve mental health and emotional well-being.",
     image: populaBooks,
     category: "Sci-Fi",
+    rating: "2",
   },
   {
     id: 3,
@@ -105,6 +101,8 @@ export const popularBooks = [
       "A gripping mystery novel about a young girl who uncovers secrets hidden deep within an ancient forest. that teaches techniques to improve mental health and emotional well-being.",
     image: populaBooks,
     category: "Self-Help",
+    rating: "9",
+    publishingDate: "Nov 23, 2020",
   },
   {
     id: 4,
@@ -115,6 +113,8 @@ export const popularBooks = [
       "A gripping mystery novel about a young girl who uncovers secrets hidden deep within an ancient forest. that teaches techniques to improve mental health and emotional well-being",
     image: populaBooks,
     category: "Cooking",
+    rating: "5",
+    publishingDate: "Nov 2, 2020",
   },
   {
     id: 5,
@@ -125,6 +125,8 @@ export const popularBooks = [
       "A gripping mystery novel about a young girl who uncovers secrets hidden deep within an ancient forest. that teaches techniques to improve mental health and emotional well-being.",
     image: populaBooks,
     category: "Fantasy",
+    rating: "8",
+    publishingDate: "Nov 23, 2020",
   },
   {
     id: 6,
@@ -135,5 +137,7 @@ export const popularBooks = [
       "A gripping mystery novel about a young girl who uncovers secrets hidden deep within an ancient forest. that teaches techniques to improve mental health and emotional well-being.",
     image: populaBooks,
     category: "Motivation",
+    rating: "3",
+    publishingDate: "Nov 23, 2020",
   },
 ];

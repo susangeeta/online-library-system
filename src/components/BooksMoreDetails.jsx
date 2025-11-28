@@ -1,10 +1,10 @@
-import { FaStar } from "react-icons/fa6";
+import { CiStar } from "react-icons/ci";
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const BooksMoreDetails = () => {
   const { id } = useParams();
-  const books = useSelector((state) => state.books.list);
+  const books = useSelector((state) => state.books.items);
   const book = books.find((item) => item.id === Number(id));
   console.log(book);
   console.log(books);
@@ -21,10 +21,9 @@ const BooksMoreDetails = () => {
         </div>
         <div className="p-4 w-full">
           <div className="flex gap-4 items-center">
-            <div className="flex gap-1">
-              {[...Array(5)].map((_, i) => (
-                <FaStar key={i} />
-              ))}
+            <div className="bg-red-600 text-white w-12 gap-1 rounded-md py-1 justify-center flex gap- items-center">
+              <CiStar className="text-xs" />
+              <div className="text-xs">{book.rating}</div>
             </div>
             <button className="bg-yellow-400 rounded-full px-4 py-1 text-xs text-white">
               {book.category}
@@ -50,7 +49,7 @@ const BooksMoreDetails = () => {
               <div className="flex flex-col gap-1">
                 <div className="text-[#717171] text-sm">Publishing Date:</div>
                 <div className="text-[#282828] text-sm font-semibold">
-                  Nov 23, 2020
+                  {book.publishingDate}
                 </div>
               </div>
             </section>
@@ -58,8 +57,17 @@ const BooksMoreDetails = () => {
               <div className="w-full bg-gray-100  h-[1.5px]"></div>
             </div>
             <p className="text-sm text-justify leading-6 w-fit pt-4">
-              {book.des}
+              {book.description}
             </p>
+            <Link to={"/"}>
+              {" "}
+              <div className="flex justify-end pt-3">
+                {" "}
+                <button className="bg-gray-400 text-sm px-3 py-2 w-24 cursor-pointer text-white rounded-md">
+                  Back home
+                </button>
+              </div>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,12 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { popularBooks } from "../data/Book";
-
+const savedBooks = JSON.parse(localStorage.getItem("books")) || popularBooks;
 const booksSlice = createSlice({
   name: "books",
-  initialState: { items: popularBooks.slice(), loading: false },
+  initialState: { items: savedBooks.slice(), loading: false },
   reducers: {
     addBook: (state, action) => {
       state.items.unshift(action.payload);
+      localStorage.setItem("books", JSON.stringify(state.items));
     },
   },
 });

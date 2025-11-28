@@ -1,5 +1,6 @@
 import book from "./book.jpg";
+import libaryLogo from "./libary-logo.jpg";
 import populaBooks from "./popular-books.jpg";
 import vector from "./vector.jpg";
 
-export { book, populaBooks, vector };
+export { book, libaryLogo, populaBooks, vector };
