@@ -38,12 +38,12 @@ const Header = () => {
             >
               <div
                 className={`${
-                  menu === "home" ? "bg-[#db5974]" : "bg-black"
+                  menu === "home" ? "bg-orange-600" : "bg-black"
                 } h-1 w-1 rounded-full `}
               ></div>
               <h1
                 className={`${
-                  menu === "home" ? "text-pink-600" : "text-gray-500"
+                  menu === "home" ? "text-orange-600" : "text-gray-500"
                 }`}
               >
                 Home
@@ -59,12 +59,12 @@ const Header = () => {
             >
               <div
                 className={`${
-                  menu === "browse" ? "bg-[#db5974]" : "bg-black"
+                  menu === "browse" ? "bg-orange-600" : "bg-black"
                 } h-1 w-1 rounded-full `}
               ></div>
               <h1
                 className={`${
-                  menu === "browse" ? "text-pink-600" : "text-gray-500"
+                  menu === "browse" ? "text-orange-600" : "text-gray-500"
                 }`}
               >
                 Browse Books

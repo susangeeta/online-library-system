@@ -91,7 +91,7 @@ const AddBooks = () => {
           <div className="flex  flex-col gap-1 w-full">
             <h1>Rating *</h1>
             <input
-              type="text"
+              type="number"
               value={rating}
               onChange={(e) => setRating(e.target.value)}
               className="border border-gray-300 p-2 w-full rounded-md focus:outline-none focus:ring-0"
@@ -108,6 +108,7 @@ const AddBooks = () => {
               onChange={(e) => setCategory(e.target.value)}
               className="border border-gray-300 p-2 rounded-md"
             >
+              <option value="">Select Field</option>
               <option value="Fiction">Fiction</option>
               <option value="Sci-fi">Sci-fi</option>
               <option value="Non-Fiction">Non-Fiction</option>
