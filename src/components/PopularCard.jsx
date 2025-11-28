@@ -3,30 +3,26 @@ import { vector } from "../assets";
 
 const PopularCard = ({ allBooks }) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-7 main-container pb-16 ">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 main-container pb-16 ">
       {allBooks.map((book, id) => (
         <div
           key={id}
-          className="flex flex-col border border-gray-300 rounded-md bg-white overflow-hidden"
+          className="flex flex-col justify-between w-full border border-gray-300 rounded-md bg-white overflow-hidden"
         >
           <div className="relative">
             <img
-              src={
-                book.image?.trim() !== ""
-                  ? book.image
-                  : "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1200&auto=format&fit=crop"
-              }
+              src={book.image}
               alt=""
-              className="h-full object-cover w-full"
+              className="h-full object-contain w-full"
             />
 
             <button className="absolute top-3 rounded-md left-3 px-4 py-1 bg-white capitalize text-xs text-[#f0582f] border border-[#f0582f]">
               {book.category}
             </button>
           </div>
-          <section className="p-3.5 flex justify-between w-full items-center">
+          <section className="p-3 flex justify-between w-full items-center">
             <div>
-              <h1 className="text-[#282828] text-base font-bold whitespace-nowrap">
+              <h1 className="text-[#282828]  text-sm font-bold">
                 {book.title}
               </h1>
               <div className="flex gap-1">
@@ -38,7 +34,7 @@ const PopularCard = ({ allBooks }) => {
             </div>
             <div>
               <Link to={`/bookDetails/${book.id}`}>
-                <button className="border boreder-[#f0582f] px-3 py-1 text-[#f0582f] rounded-md cursor-pointer">
+                <button className="border boreder-[#f0582f] px-3  lg:w-32 2xl:w-32 py-1 text-[#f0582f] rounded-md cursor-pointer">
                   View Details
                 </button>
               </Link>

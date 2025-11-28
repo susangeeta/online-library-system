@@ -6,12 +6,10 @@ const BooksMoreDetails = () => {
   const { id } = useParams();
   const books = useSelector((state) => state.books.items);
   const book = books.find((item) => item.id === Number(id));
-  console.log(book);
-  console.log(books);
 
   return (
     <div className="main-container flex items-center justify-center py-12  ">
-      <div className="flex  rounded-md w-[60%] bg-white border border-gray-300 overflow-hidden  ">
+      <div className="flex md:flex-row flex-col  rounded-md w-full  md:w-[60%] bg-white border border-gray-300 overflow-hidden  ">
         <div className="">
           <img
             src={book.image}

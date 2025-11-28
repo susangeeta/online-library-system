@@ -10,14 +10,16 @@ const Header = () => {
   return (
     <div className="flex main-container justify-between w-full gap-15 cursor-pointer bg-white rounded-md items-center shadow-[0_8px_30px_rgb(0,0,0,0.12)">
       <div className="md:flex hidden">
-        <img
-          src={libaryLogo}
-          className=" h-10 w-10 md:h-18 md:w-18 object-contain "
-        />
+        <Link to={"/"}>
+          <img src={libaryLogo} className=" h-12 w-12 object-contain " />
+        </Link>
       </div>
       <section className="md:hidden flex justify-between items-center w-full">
         <div className=" md:hidden">
-          <img src={libaryLogo} className="h-10 w-10  object-contain " />
+          <Link to={"/"}>
+            {" "}
+            <img src={libaryLogo} className="h-10 w-10  object-contain " />
+          </Link>
         </div>
         <div className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? (
@@ -77,12 +79,12 @@ const Header = () => {
             >
               <div
                 className={`${
-                  menu === "book" ? "bg-[#db5974]" : "bg-black"
+                  menu === "book" ? "bg-orange-600" : "bg-black"
                 } h-1 w-1 rounded-full `}
               ></div>
               <h1
                 className={`${
-                  menu === "book" ? "text-pink-600" : "text-gray-500"
+                  menu === "book" ? "text-orange-600" : "text-gray-500"
                 }`}
               >
                 Add Book
@@ -100,12 +102,12 @@ const Header = () => {
           >
             <div
               className={`${
-                menu === "home" ? "bg-[#db5974]" : "bg-black"
+                menu === "home" ? "bg-orange-600" : "bg-black"
               } h-1 w-1 rounded-full `}
             ></div>
             <h1
               className={`${
-                menu === "home" ? "text-pink-600" : "text-gray-500"
+                menu === "home" ? "text-orange-600" : "text-gray-500"
               }`}
             >
               Home
@@ -121,12 +123,12 @@ const Header = () => {
           >
             <div
               className={`${
-                menu === "browse" ? "bg-[#db5974]" : "bg-black"
+                menu === "browse" ? "bg-orange-600" : "bg-black"
               } h-1 w-1 rounded-full `}
             ></div>
             <h1
               className={`${
-                menu === "browse" ? "text-pink-600" : "text-gray-500"
+                menu === "browse" ? "text-orange-600" : "text-gray-500"
               }`}
             >
               Browse Books
@@ -141,12 +143,12 @@ const Header = () => {
           >
             <div
               className={`${
-                menu === "book" ? "bg-[#db5974]" : "bg-black"
+                menu === "book" ? "bg-orange-600" : "bg-black"
               } h-1 w-1 rounded-full `}
             ></div>
             <h1
               className={`${
-                menu === "book" ? "text-pink-600" : "text-gray-500"
+                menu === "book" ? "text-orange-600" : "text-gray-500"
               }`}
             >
               Add Book

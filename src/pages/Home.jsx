@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { bannerThimb, booksBanner } from "../assets";
 import PopularCard from "../components/PopularCard";
 import { categories } from "../data/Book";
 
@@ -13,9 +14,16 @@ const Home = () => {
   const popular = [...allBooks].sort((a, b) => b.rating - a.rating).slice(0, 4);
   return (
     <div>
-      <section className="main-container h-[300px] md:h-[600px]  bg-[url('https://eyecix.com/html/ereaders/extra-images/banner-1.jpg')] bg-cover bg-center bg-no-repeat  bg-black/75 bg-blend-overlay">
+      <section
+        className="h-[300px] md:h-[600px] bg-black/85 main-container bg-blend-overlay"
+        style={{
+          backgroundImage: `url(${booksBanner})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <section className="flex md:flex-row flex-col w-full items-center justify-center ">
-          <div className=" w-full md:w-[60%] flex pt-10  flex-col gap-2 text-white justify-center">
+          <div className=" w-full md:w-[60%] pt-16 md:pt-0 flex  flex-col gap-2 text-white justify-center">
             <h2 className=" text-2xl md:text-6xl font-bold">
               Welcome to the{" "}
               <span className="text-[#db5974] font-bold"> Library</span>
@@ -29,7 +37,7 @@ const Home = () => {
           </div>
           <div className=" md:block hidden w-full md:w-[40%]">
             <img
-              src="https://eyecix.com/html/ereaders/extra-images/banner-thumb.png"
+              src={bannerThimb}
               className="w-full object-contain h-[500px] "
             />
           </div>

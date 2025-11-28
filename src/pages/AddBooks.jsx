@@ -45,7 +45,7 @@ const AddBooks = () => {
     setTimeout(() => navigate("/browse"), 800);
   };
   return (
-    <div className="py-12 main-container w-full  md:w-[50%]">
+    <div className="py-12 main-container w-full  lg:w-[50%]">
       <form
         onSubmit={handelSubmit}
         className="bg-white  shadow-[0_8px_30px_rgb(0,0,0,0.12)] p-5 flex flex-col gap-4 "
@@ -53,7 +53,7 @@ const AddBooks = () => {
         <h1 className="text-center text-[#f0582f] text-2xl">Add New Book</h1>
         <div className="flex md:flex-row flex-col  gap-3">
           <div className="flex  flex-col gap-1 w-full ">
-            <h1>Book Title</h1>
+            <h1>Book Title *</h1>
             <input
               type="text"
               value={title}
@@ -64,7 +64,7 @@ const AddBooks = () => {
             />
           </div>
           <div className="flex  flex-col gap-1 w-full">
-            <h1>Author Name</h1>
+            <h1>Author Name *</h1>
             <input
               type="text"
               value={author}
@@ -78,7 +78,7 @@ const AddBooks = () => {
 
         <div className="flex md:flex-row flex-col  gap-3">
           <div className="flex  flex-col gap-1 w-full">
-            <h1>Action</h1>
+            <h1>Action *</h1>
             <input
               type="text"
               value={action}
@@ -89,7 +89,7 @@ const AddBooks = () => {
             />
           </div>
           <div className="flex  flex-col gap-1 w-full">
-            <h1>Rating</h1>
+            <h1>Rating *</h1>
             <input
               type="text"
               value={rating}
@@ -102,7 +102,7 @@ const AddBooks = () => {
         </div>
         <div className="flex md:flex-row flex-col  gap-3">
           <div className="flex  flex-col gap-1 w-full">
-            <h1>Catgory</h1>
+            <h1>Catgory *</h1>
             <select
               value={category}
               onChange={(e) => setCategory(e.target.value)}
@@ -110,8 +110,7 @@ const AddBooks = () => {
             >
               <option value="Fiction">Fiction</option>
               <option value="Sci-fi">Sci-fi</option>
-              <option value="Self-Help">Self-Help</option>
-              <option value="Cooking">Cooking</option>
+              <option value="Non-Fiction">Non-Fiction</option>
             </select>
           </div>
           <div className="flex flex-col gap-1 w-full">
@@ -126,7 +125,7 @@ const AddBooks = () => {
           </div>
         </div>
         <div className="flex flex-col gap-1">
-          <label className="font-semibold">Description</label>
+          <label className="font-semibold">Description *</label>
           <textarea
             value={des}
             name=""

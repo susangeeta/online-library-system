@@ -58,7 +58,7 @@ const BrowseBooks = () => {
             <option value="All">All</option>
             <option value="Fiction">Fiction</option>
             <option value="Sci-fi">Sci-fi</option>
-            <option value="Sci-fi">Non-fiction</option>
+            <option value="Non-Fiction">Non-fiction</option>
           </select>
         </div>
         {loading ? (
